@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Form </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<form action="http://localhost:5000/login" method="post">
+    <p>Enter Name:</p>
+    <p><input type="text" name="name"/></p>
+    <p><input type="submit" value="submit"/></p>
+</form>
+
+<table border=1>
+    {{ result.phy }},
+    {{ result.maths }}
+    {% for (key, value) in result.items() %}
+    <tr>
+        <th> {{ key }}</th>
+        <td> {{ value }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
